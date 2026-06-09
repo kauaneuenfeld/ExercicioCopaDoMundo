@@ -1,4 +1,7 @@
 package com.example.ExercicioCopaDoMundo.Repository;
 
-public interface ConvocacaoRepository {
+import com.example.ExercicioCopaDoMundo.Model.Convocacao;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ConvocacaoRepository extends JpaRepository<Convocacao, Long> {
 }
