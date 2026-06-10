@@ -1,0 +1,110 @@
+{
+  "info": {
+    "_postman_id": "0d1b0c2a-01e7-490b-8422-c047ee8b693c",
+    "name": "ExercicioCopaDoMundo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54503878",
+    "_collection_link": "https://go.postman.co/collection/54503878-0d1b0c2a-01e7-490b-8422-c047ee8b693c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "selecoes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"nome\": \"Brasil\",\r\n \"grupo\": \"A\",\r\n \"fase\": \"Grupos\",\r\n \"golsMarcados\": 0,\r\n \"golsSofridos\": 0,\r\n \"valorPlantel\": 250.5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8082/selecoes",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "selecoes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "convocacoes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"dataConvocacao\": \"2026-05-01\",\r\n \"quantidade\": 23,\r\n \"selecao\": { \"id\": 1 \r\n }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8082/convocacoes",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "convocacoes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "partidas",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \"dataPartida\": \"2026-06-12\",\r\n \"quantidade\": 11,\r\n \"selecao\": { \"id\": 1 }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8082/partidas",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "partidas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "selecoes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8082/selecoes",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "selecoes"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
