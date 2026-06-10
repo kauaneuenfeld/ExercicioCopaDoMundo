@@ -21,19 +21,26 @@ public class PartidaController {
     private final PartidaService partidaService;
 
     @GetMapping
-    public List<Partida> listar(){
-        return partidaRespository.findAllByOrderBydataPartidaDesc();
+    public List<Partida> listar() {
+        return partidaRespository.findAllByOrderByDataPartidaDesc();
     }
 
     @PostMapping
-    public ResponseEntity<Partida> registrar (@Valid @RequestBody Partida partida){
+    public ResponseEntity<Partida> registrar(@Valid @RequestBody Partida partida) {
         return ResponseEntity.status(201).body(partidaService.registrar(partida));
     }
 
     @GetMapping("/historico")
     public List<Partida> historico(
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)LocalDate dataInicial,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataFinal){
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataInicial,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataFinal) {
+        return partidaRespository.findByDataPartidaBetweenOrderByDataPartidaAsc(dataInicial, dataFinal);
+    }
+
+    @GetMapping("/mais-escaladas")
+    public List<Partida> maisEscaladas(
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataInicial,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataFinal) {
         return partidaRespository.findMaisEscaladasNoPeriodo(dataInicial, dataFinal);
     }
 }
