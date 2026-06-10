@@ -25,4 +25,14 @@ public class SelecaoController {
     public ResponseEntity<Selecao> cadastrar(@Valid @RequestBody Selecao selecao) {
         return ResponseEntity.status(201).body(selecaoRepository.save(selecao));
     }
+
+    @GetMapping("/grupo")
+    public List<Selecao> ListarPorGrupo(){
+        return selecaoRepository.findAllOrderByGrupo();
+    }
+
+    @GetMapping("/limites")
+    public List<Selecao> ListarNosLimites(){
+        return selecaoRepository.findByJogadoresDisponiveisLessThanEqualOrJogadoresDisponiveisGreaterThanEqual(0,100);
+    }
 }

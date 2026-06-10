@@ -14,7 +14,7 @@ public class ConvocacaoService {
     private final ConvocacaoRepository convocacaoRepository;
     private final SelecaoRepository selecaoRepository;
 
-    public Convocacao registar(Convocacao convocacao){
+    public Convocacao registrar(Convocacao convocacao){
         Selecao selecao = selecaoRepository.findById(convocacao.getSelecao().getId())
                 .orElseThrow(() -> new RuntimeException("Seleção não encontrada"));
         Integer saldoAtual = selecao.getJogadoresDisponiveis();

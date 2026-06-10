@@ -19,6 +19,6 @@ public class ConvocacaoController {
 
     @PostMapping
     public ResponseEntity<Convocacao> registrar(@Valid @RequestBody Convocacao convocacao){
-        return ResponseEntity.status(201).body(convocacaoService.registar(convocacao));
+        return ResponseEntity.status(201).body(convocacaoService.registrar(convocacao));
     }
 }
